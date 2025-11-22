@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Profesionalna Anketa</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Smooth Fade In */
+    .fade-in {
+      animation: fadeIn 0.9s ease forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Slider stil */
+    input[type="range"]::-webkit-slider-thumb {
+      height: 22px;
+      width: 22px;
+      background: white;
+      border-radius: 50%;
+      border: 3px solid #6366f1;
+      cursor: pointer;
+      appearance: none;
+    }
+
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 8px;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, #34d399, #facc15, #f87171);
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-gray-900 via-slate-900 to-black min-h-screen flex items-center justify-center p-5">
+
+  <!-- Wrapper -->
+  <div class="fade-in w-full max-w-xl p-8 bg-white/10 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.6)]">
+
+    <!-- Naslov -->
+    <h1 class="text-center text-3xl font-bold text-white tracking-tight mb-8">
+      Anketica
+    </h1>
+
+    <form id="anketaForm" class="space-y-7 text-white">
+
+      <!-- Pitanje 1 -->
+      <div class="flex flex-col gap-2">
+        <label class="text-sm font-medium opacity-90">1. Kako ste danas?</label>
+        <input type="text"
+               name="Kako ste danas"
+               class="bg-white/10 border border-white/20 rounded-xl p-3 placeholder-gray-300 focus:ring-2 focus:ring-indigo-400 outline-none transition" 
+               placeholder="Upišite odgovor..." />
+      </div>
+
+      <!-- Pitanje 2 -->
+      <div class="flex flex-col gap-2">
+        <label class="text-sm font-medium opacity-90">2. Zadovoljstvo poslom</label>
+        <select name="Zadovoljstvo poslom"
+                class="bg-white/10 border border-white/20 rounded-xl p-3 focus:ring-2 focus:ring-indigo-400 outline-none transition">
+          <option>Odlično</option>
+          <option>Dobro</option>
+          <option>Može bolje</option>
+          <option>Loše</option>
+        </select>
+      </div>
+
+<!-- Slider -->
+<div class="flex flex-col gap-3 relative">
+  <label class="text-sm font-medium opacity-90">3. Razina stresa danas (0 - 10)</label>
+
+  <div class="relative pt-3 pb-6">
+
+    <!-- Glow aura oko slidera -->
+    <div class="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-10 
+                bg-gradient-to-r from-green-500/40 via-yellow-400/40 to-red-500/40 
+                blur-xl rounded-full opacity-60 pointer-events-none"></div>
+
+    <!-- Glavni slider -->
+    <input 
+      type="range" 
+      name="Razina stresa"
+      min="0" 
+      max="10" 
+      value="5"
+      class="w-full h-3 rounded-full appearance-none cursor-pointer relative z-10 
+             bg-gradient-to-r from-green-400 via-yellow-300 to-red-400
+             shadow-[inset_0_0_10px_rgba(0,0,0,0.7),0_4px_14px_rgba(0,0,0,0.8)]
+             border border-white/20"
+      id="stressSlider"
+    >
+
+    <!-- 3D refleksija iznad tracka -->
+    <div class="pointer-events-none absolute left-0 right-0 top-[28%] h-2 
+                bg-white/20 blur-md rounded-full opacity-30"></div>
+  </div>
+</div>
+
+      <!-- Pitanje 4 -->
+      <div class="flex flex-col gap-2">
+        <label class="text-sm font-medium opacity-90">4. Najdraži dio dana</label>
+        <input type="text"
+               name="Najdraži dio dana"
+               class="bg-white/10 border border-white/20 rounded-xl p-3 placeholder-gray-300 focus:ring-2 focus:ring-indigo-400 outline-none transition"
+               placeholder="Upišite odgovor..." />
+      </div>
+
+      <!-- Pitanje 5 -->
+      <div class="flex flex-col gap-2">
+        <label class="text-sm font-medium opacity-90">5. Prijedlozi za poboljšanje</label>
+        <textarea name="Prijedlozi"
+                  rows="3"
+                  class="bg-white/10 border border-white/20 rounded-xl p-3 placeholder-gray-300 focus:ring-2 focus:ring-indigo-400 outline-none transition"
+                  placeholder="Napišite svoj prijedlog..."></textarea>
+      </div>
+
+      <!-- Gumb -->
+       <div id="errorBox"></div>
+
+      <button type="submit"
+              class="w-full py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 transition-all shadow-lg hover:shadow-xl">
+        Pošalji odgovore
+      </button>
+    </form>
+  </div>
+
+<script>
+document.getElementById("anketaForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const form = this;
+    const data = new FormData(form);
+
+    // Lista polja za validaciju
+    const requiredFields = {
+        "Kako ste danas": "Kako ste danas?",
+        "Zadovoljstvo poslom": "Zadovoljstvo poslom",
+        "Razina stresa": "Razina stresa",
+        "Najdraži dio dana": "Najdraži dio dana",
+        "Prijedlozi": "Prijedlozi za poboljšanje"
+    };
+
+    let errors = [];
+    let tekst = "";
+
+    // Reset stilova
+    form.querySelectorAll(".error-border").forEach(el => {
+        el.classList.remove("error-border", "border-red-500");
+    });
+
+    // Prolazak kroz sva polja
+    data.forEach((value, key) => {
+        const fieldElement = form.querySelector(`[name="${key}"]`);
+
+        if (requiredFields[key] && (!value || value.trim() === "")) {
+            errors.push(requiredFields[key]);
+
+            if (fieldElement) {
+                fieldElement.classList.add("border-red-500", "error-border");
+            }
+        }
+
+        tekst += `${key}: ${value}\n`;
+    });
+
+    // Prikaz errora
+    const errorBox = document.getElementById("errorBox");
+
+    if (errors.length > 0) {
+        errorBox.innerHTML = `
+            <div class="bg-red-500/20 border border-red-500 text-red-300 p-3 rounded-xl mt-4">
+                <strong>Molimo ispunite sljedeća polja:</strong>
+                <ul class="mt-1 list-disc list-inside">
+                    ${errors.map(e => `<li>${e}</li>`).join("")}
+                </ul>
+            </div>
+        `;
+        return;
+    } else {
+        errorBox.innerHTML = "";
+    }
+
+    // Ako je sve ispravno -> pošalji na backend
+    try {
+        const response = await fetch("http://localhost:3001/send-email", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(Object.fromEntries(data))
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            // Uspjeh
+            alert("Email uspješno poslan!");
+            form.reset();
+        } else {
+            // Backend greška
+            errorBox.innerHTML = `
+                <div class="bg-red-500/20 border border-red-500 text-red-300 p-3 rounded-xl mt-4">
+                    Greška: ${result.message}
+                </div>`;
+        }
+    } catch (err) {
+        console.error(err);
+        errorBox.innerHTML = `
+            <div class="bg-red-500/20 border border-red-500 text-red-300 p-3 rounded-xl mt-4">
+                Nema veze s tobom — server se ne može dohvatiti.
+            </div>`;
+    }
+});
+</script>
+
+
+
+  <style>
+  /* 3D slider knob */
+  #stressSlider::-webkit-slider-thumb {
+    appearance: none;
+    height: 28px;
+    width: 28px;
+    background: linear-gradient(145deg, #ffffff, #d4d4d4);
+    border-radius: 50%;
+    border: 4px solid #6366f1;
+    box-shadow:
+      0 4px 10px rgba(0,0,0,0.6),             /* drop shadow */
+      inset 0 0 6px rgba(255,255,255,0.9),    /* highlight */
+      inset 0 -4px 10px rgba(0,0,0,0.3);      /* bottom depth */
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+  }
+
+  /* Hover animacija (mini popping efekt) */
+  #stressSlider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+    box-shadow:
+      0 6px 15px rgba(0,0,0,0.7),
+      inset 0 0 10px rgba(255,255,255,1),
+      inset 0 -6px 15px rgba(0,0,0,0.35);
+  }
+
+  /* Klik animacija */
+  #stressSlider::-webkit-slider-thumb:active {
+    transform: scale(1.25);
+  }
+
+  /* Track styling for Firefox */
+  #stressSlider::-moz-range-thumb {
+    height: 28px;
+    width: 28px;
+    background: linear-gradient(145deg, #ffffff, #d4d4d4);
+    border-radius: 50%;
+    border: 4px solid #6366f1;
+    cursor: pointer;
+  }
+</style>
+
+</body>
+</html>
