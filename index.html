@@ -67,212 +67,182 @@
 
 
     <form id="page1" data-step="1" class="space-y-7 text-white fade">
-
-      <h2 class="text-xl font-semibold mb-4 text-center">I. OPĆE INFORMACIJE</h2>
-
-      <div>
-        <label class="block mb-2">1. Spol:</label>
-        <div class="flex gap-4">
-          <label><input type="radio" name="Spol" value="Muški" required /> Muški</label>
-          <label><input type="radio" name="Spol" value="Ženski" required /> Ženski</label>
-          <label><input type="radio" name="Spol" value="Drugo" required /> Drugo</label>
+        <h2 class="text-xl font-semibold mb-4 text-center">I. OPĆE INFORMACIJE</h2>
+        
+        <div>
+            <label class="block mb-2">1. Spol:</label>
+            <div class="flex gap-4">
+                <label><input type="radio" name="Spol" value="Muški" required /> Muški</label>
+                <label><input type="radio" name="Spol" value="Ženski" required /> Ženski</label>
+                <label><input type="radio" name="Spol" value="Drugo" required /> Drugo</label>
+            </div>
         </div>
-      </div>
-
-      <div>
-        <label class="block mb-2">2. Dob:</label>
-        <input type="number" name="Dob" required
-               class="w-full p-3 rounded-xl bg-white/10 border border-white/20" />
-      </div>
-
-      <div>
-        <label class="block mb-2">3. U kojoj državi trenirate?</label>
-      <input type="text" name="Država" required
-              class="w-full p-3 rounded-xl bg-white/10 border border-white/20" />
-      </div>
-
-      <div>
-        <label class="block mb-2">4. U kojem gradu trenirate?</label>
-        <input type="text" name="Grad" required
-               class="w-full p-3 rounded-xl bg-white/10 border border-white/20" />
-      </div>
-
-      <div>
-        <label class="block mb-2">5. Kojim kontaktnim sportom se bavite?</label>
-        <div class="grid grid-cols-2 gap-2">
-          <label><input type="radio" name="Sport" value="Boks" required /> Boks</label>
-          <label><input type="radio" name="Sport" value="Kickboxing" required /> Kickboxing</label>
-          <label><input type="radio" name="Sport" value="MMA" required /> MMA</label>
-          <label><input type="radio" name="Sport" value="Ragbi" required /> Ragbi</label>
-          <label><input type="radio" name="Sport" value="Hokej" required /> Hokej</label>
-          <label><input type="radio" name="Sport" value="Karate" required /> Karate</label>
-          <label><input type="radio" name="Sport" value="Taekwondo" required /> Taekwondo</label>
-          <label><input type="radio" name="Sport" value="Hrvanje" required /> Hrvanje</label>
+        
+        <div>
+            <label class="block mb-2">2. Dob:</label>
+            <input type="number" name="Dob" required class="w-full p-3 rounded-xl bg-white/10 border border-white/20" />
         </div>
-
-        <input type="text" placeholder="Drugo..."
-               name="SportDrugo"
-               class="w-full mt-2 p-3 rounded-xl bg-white/10 border border-white/20" />
-      </div>
-
-      <div>
-        <label class="block mb-2">6. Koliko dugo se bavite ovim sportom?</label>
-        <select name="Iskustvo" required class="w-full p-3 rounded-xl bg-white/10 border border-white/20">
-          <option value="" disabled selected>Odaberite...</option>
-          <option>Manje od 1 godine</option>
-          <option>1-3 godine</option>
-          <option>3-5 godina</option>
-          <option>Više od 5 godina</option>
-        </select>
-      </div>
-
-      <div>
-        <label class="block mb-2">7. Koliko često trenirate?</label>
-        <select name="Učestalost" required class="w-full p-3 rounded-xl bg-white/10 border border-white/20">
-          <option value="" disabled selected>Odaberite...</option>
-          <option>Manje od 2 puta tjedno</option>
-          <option>2-4 puta tjedno</option>
-          <option>5 i više puta tjedno</option>
-        </select>
-      </div>
-
-      <button type="button" data-next-step="2"
-              class="next-btn w-full py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg">
-        Dalje →
-      </button>
+        
+        <div>
+            <label class="block mb-2">3. U kojoj državi trenirate?</label>
+            <input type="text" name="Država" required class="w-full p-3 rounded-xl bg-white/10 border border-white/20" />
+        </div>
+        
+        <div>
+            <label class="block mb-2">4. U kojem gradu trenirate?</label>
+            <input type="text" name="Grad" required class="w-full p-3 rounded-xl bg-white/10 border border-white/20" />
+        </div>
+        
+        <div>
+            <label class="block mb-2">5. Kojim kontaktnim sportom se bavite?</label>
+            <div class="grid grid-cols-2 gap-2">
+                <label><input type="radio" name="Sport" value="Boks" required /> Boks</label>
+                <label><input type="radio" name="Sport" value="Kickboxing" required /> Kickboxing</label>
+                <label><input type="radio" name="Sport" value="MMA" required /> MMA</label>
+                <label><input type="radio" name="Sport" value="Ragbi" required /> Ragbi</label>
+                <label><input type="radio" name="Sport" value="Hokej" required /> Hokej</label>
+                <label><input type="radio" name="Sport" value="Karate" required /> Karate</label>
+                <label><input type="radio" name="Sport" value="Taekwondo" required /> Taekwondo</label>
+                <label><input type="radio" name="Sport" value="Hrvanje" required /> Hrvanje</label>
+            </div>
+            <input type="text" placeholder="Drugo..." name="SportDrugo" class="w-full mt-2 p-3 rounded-xl bg-white/10 border border-white/20" />
+        </div>
+        
+        <div>
+            <label class="block mb-2">6. Koliko dugo se bavite ovim sportom?</label>
+            <select name="Iskustvo" required class="w-full p-3 rounded-xl bg-white/10 border border-white/20">
+                <option value="" disabled selected>Odaberite...</option>
+                <option>Manje od 1 godine</option>
+                <option>1-3 godine</option>
+                <option>3-5 godina</option>
+                <option>Više od 5 godina</option>
+            </select>
+        </div>
+        
+        <div>
+            <label class="block mb-2">7. Koliko često trenirate?</label>
+            <select name="Učestalost" required class="w-full p-3 rounded-xl bg-white/10 border border-white/20">
+                <option value="" disabled selected>Odaberite...</option>
+                <option>Manje od 2 puta tjedno</option>
+                <option>2-4 puta tjedno</option>
+                <option>5 i više puta tjedno</option>
+            </select>
+        </div>
+        
+        <button type="button" data-next-step="2" class="next-btn w-full py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg">
+            Dalje →
+        </button>
     </form>
 
-    <form id="page2" data-step="2" class="hidden space-y-7 text-white fade">
+    <form id="page2" data-step="2" class="space-y-7 text-white hidden fade">
 
-      <h2 class="text-xl font-semibold mb-4 text-center">II. ISKUSTVO S KORIŠTENJEM SPORTSKIH UDLAGA</h2>
+  <h2 class="text-xl font-semibold mb-4 text-center">II. ISKUSTVO S KORIŠTENJEM SPORTSKIH UDLAGA</h2>
 
-      <div>
-        <label class="block mb-2">1. Koristite li sportsku udlagu?</label>
-        <div class="flex gap-4">
-          <label><input type="radio" name="KoristenjeUdlage" value="Da" required /> Da</label>
-          <label><input type="radio" name="KoristenjeUdlage" value="Ne" required /> Ne</label>
-        </div>
+  <div id="q2_koristenje">
+    <label class="block mb-2">1. Koristite li sportsku udlagu?</label>
+    <div class="flex gap-4">
+      <label><input type="radio" name="KoristenjeUdlage" value="Da" required /> Da</label>
+      <label><input type="radio" name="KoristenjeUdlage" value="Ne" required /> Ne</label>
+    </div>
+  </div>
+
+  <div id="q2_razlog_ne" class="hidden">
+    <label class="block mb-2">2. Ako ne, zašto ne koristite sportsku udlagu?</label>
+    <div class="grid grid-cols-1 gap-2">
+      <label><input type="checkbox" name="RazlogNekoristenja" value="Nije potrebna" /> Nije mi potrebna</label>
+      <label><input type="checkbox" name="RazlogNekoristenja" value="Nije udobna" /> Nije udobna</label>
+      <label><input type="checkbox" name="RazlogNekoristenja" value="Preskupa" /> Preskupa je</label>
+      <label><input type="checkbox" name="RazlogNekoristenja" value="Nisam znao" /> Nisam znao/la da trebam</label>
+      <label><input type="checkbox" name="RazlogNekoristenja" value="Estetski razlozi" /> Iz estetskih razloga</label>
+    </div>
+  </div>
+
+  <div id="q2_da_group" class="space-y-7">
+    <div>
+      <label class="block mb-2">3. Ako koristite sportsku udlagu, koju vrstu koristite?</label>
+      <div class="grid grid-cols-1 gap-2">
+        <label><input type="radio" name="VrstaUdlage" value="Konfekcijska" /> Konfekcijsku</label>
+        <label><input type="radio" name="VrstaUdlage" value="Poluprilagodljiva" /> Poluprilagodljivi dentalni štitnik (boil and bite)</label>
+        <label><input type="radio" name="VrstaUdlage" value="Individualna" /> Individualnu</label>
       </div>
+    </div>
 
-      <div>
-        <label class="block mb-2">2. Ako ne, zašto ne koristite sportsku udlagu?</label>
-        <div class="grid grid-cols-1 gap-2">
-          <label><input type="checkbox" name="RazlogNekoristenja" value="Nije potrebna" /> Nije mi potrebna</label>
-          <label><input type="checkbox" name="RazlogNekoristenja" value="Nije udobna" /> Nije udobna</label>
-          <label><input type="checkbox" name="RazlogNekoristenja" value="Preskupa" /> Preskupa je</label>
-          <label><input type="checkbox" name="RazlogNekoristenja" value="Nisam znao" /> Nisam znao/la da trebam</label>
-          <label><input type="checkbox" name="RazlogNekoristenja" value="Estetski razlozi" /> Iz estetskih razloga</label>
-        </div>
+    <div>
+      <label class="block mb-2">4. Koliko često koristite sportsku udlagu tijekom treninga?</label>
+      <select name="KorištenjeTrening" class="w-full p-3 rounded-xl bg-white/10 border border-white/20">
+        <option value="" disabled selected>Odaberite...</option>
+        <option>Uvijek</option>
+        <option>Ponekad</option>
+        <option>Nikad</option>
+      </select>
+    </div>
+  
+    <div>
+      <label class="block mb-2">5. Koliko često koristite sportsku udlagu tijekom natjecanja?</label>
+      <select name="KorištenjeNatjecanje" class="w-full p-3 rounded-xl bg-white/10 border border-white/20">
+        <option value="" disabled selected>Odaberite...</option>
+        <option>Uvijek</option>
+        <option>Ponekad</option>
+        <option>Nikad</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block mb-2">6. Gdje ste nabavili svoju udlagu?</label>
+      <div class="grid grid-cols-1 gap-2">
+        <label><input type="radio" name="NabavaUdlage" value="Sportska trgovina" /> Sportska trgovina</label>
+        <label><input type="radio" name="NabavaUdlage" value="Online kupnja" /> Online kupnja</label>
+        <label><input type="radio" name="NabavaUdlage" value="Doktor dentalne medicine" /> U doktora dentalne medicine</label>
+        <label><input type="radio" name="NabavaUdlage" value="Dobivena od kluba" /> Dobio/la od kluba / trenera</label>
       </div>
+    </div>
+  </div>
 
-      <div>
-        <label class="block mb-2">3. Ako koristite sportsku udlagu, koju vrstu koristite?</label>
-        <div class="grid grid-cols-1 gap-2">
-          <label><input type="radio" name="VrstaUdlage" value="Konfekcijska" /> Konfekcijsku</label>
-          <label><input type="radio" name="VrstaUdlage" value="Poluprilagodljiva" /> Poluprilagodljivi dentalni štitnik (boil and bite)</label>
-          <label><input type="radio" name="VrstaUdlage" value="Individualna" /> Individualnu</label>
-        </div>
-      </div>
 
-      <div>
-        <label class="block mb-2">4. Koliko često koristite sportsku udlagu tijekom treninga?</label>
-        <select name="KorištenjeTrening" required class="w-full p-3 rounded-xl bg-white/10 border border-white/20">
-          <option value="" disabled selected>Odaberite...</option>
-          <option>Uvijek</option>
-          <option>Ponekad</option>
-          <option>Nikad</option>
-        </select>
-      </div>
+  <button type="button" data-next-step="3" id="page2_next_btn" class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg">
+    Dalje →
+  </button>
 
-      <div>
-        <label class="block mb-2">5. Koliko često koristite sportsku udlagu tijekom natjecanja?</label>
-        <select name="KorištenjeNatjecanje" required class="w-full p-3 rounded-xl bg-white/10 border border-white/20">
-          <option value="" disabled selected>Odaberite...</option>
-          <option>Uvijek</option>
-          <option>Ponekad</option>
-          <option>Nikad</option>
-        </select>
-      </div>
-
-      <div>
-        <label class="block mb-2">6. Gdje ste nabavili svoju udlagu?</label>
-        <div class="grid grid-cols-1 gap-2">
-          <label><input type="radio" name="NabavaUdlage" value="Sportska trgovina" required /> Sportska trgovina</label>
-          <label><input type="radio" name="NabavaUdlage" value="Online kupnja" required /> Online kupnja</label>
-          <label><input type="radio" name="NabavaUdlage" value="Doktor dentalne medicine" required /> U doktora dentalne medicine</label>
-          <label><input type="radio" name="NabavaUdlage" value="Dobivena od kluba" required /> Dobio/la od kluba / trenera</label>
-        </div>
-      </div>
-
-      <button type="button" data-next-step="3"
-              class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg">
-        Dalje →
-      </button>
-
-    </form>
-
+</form>
+    
     <form id="page3" data-step="3" class="hidden space-y-7 text-white fade">
-
-      <h2 class="text-xl font-semibold mb-4 text-center">
-        III. UDOBNOST I PRILAGODBA
-      </h2>
-
-      <div class="space-y-7">
-
-        <div class="flex flex-col gap-3 relative">
-          <label class="text-sm font-medium opacity-90">
-            1. Kako biste ocijenili udobnost svoje udlage (VAS ljestvica)?
-          </label>
-
-          <div class="relative pt-3 pb-6">
-
-            <div class="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-10
-                        bg-gradient-to-r from-red-500/40 via-yellow-400/40 to-green-500/40
-                        blur-xl rounded-full opacity-60 pointer-events-none"></div>
-
-            <input
-              type="range"
-              min="0"
-              max="100"
-              value="50"
-              name="VAS Udobnost"
-              id="comfortSlider"
-              class="w-full h-3 rounded-full appearance-none cursor-pointer relative z-10
-                     bg-gradient-to-r from-red-400 via-yellow-300 to-green-400
-                     shadow-[inset_0_0_10px_rgba(0,0,0,0.7),0_4px_14px_rgba(0,0,0,0.8)]
-                     border border-white/20">
-          </div>
-
-          <p class="text-sm opacity-80">
-            Vrijednost: <span id="comfortValue" class="font-semibold">50</span>/100
-          </p>
+        <h2 class="text-xl font-semibold mb-4 text-center">III. UDOBNOST I PRILAGODBA</h2>
+        <div class="space-y-7">
+            <div class="flex flex-col gap-3 relative">
+                <label class="text-sm font-medium opacity-90">
+                    1. Kako biste ocijenili udobnost svoje udlage (VAS ljestvica)?
+                </label>
+                <div class="relative pt-3 pb-6">
+                    <div class="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-10 bg-gradient-to-r from-red-500/40 via-yellow-400/40 to-green-500/40 blur-xl rounded-full opacity-60 pointer-events-none"></div>
+                    <input type="range" min="0" max="100" value="50" name="VAS Udobnost" id="comfortSlider" required class="w-full h-3 rounded-full appearance-none cursor-pointer relative z-10 bg-gradient-to-r from-red-400 via-yellow-300 to-green-400 shadow-[inset_0_0_10px_rgba(0,0,0,0.7),0_4px_14px_rgba(0,0,0,0.8)] border border-white/20">
+                </div>
+                <p class="text-sm opacity-80">
+                    Vrijednost: <span id="comfortValue" class="font-semibold">50</span>/100
+                </p>
+            </div>
+            
+            <div>
+                <label class="block mb-2">2. Imate li osjećaj nelagode ili pritiska u ustima dok nosite udlagu?</label>
+                <label><input type="radio" name="Nelagoda" value="Da" required /> Da</label><br>
+                <label><input type="radio" name="Nelagoda" value="Ne" required /> Ne</label>
+            </div>
+            
+            <div>
+                <label class="block mb-2">3. Možete li normalno disati dok nosite udlagu?</label>
+                <label><input type="radio" name="Disanje" value="Da" required /> Da</label><br>
+                <label><input type="radio" name="Disanje" value="Ne" required /> Ne</label>
+            </div>
+            
+            <div>
+                <label class="block mb-2">4. Možete li normalno govoriti dok nosite udlagu?</label>
+                <label><input type="radio" name="Govor" value="Da" required /> Da</label><br>
+                <label><input type="radio" name="Govor" value="Ne" required /> Ne</label>
+            </div>
         </div>
-
-        <div>
-          <label class="block mb-2">2. Imate li osjećaj nelagode ili pritiska u ustima dok nosite udlagu?</label>
-          <label><input type="radio" name="Nelagoda" value="Da" required /> Da</label><br>
-          <label><input type="radio" name="Nelagoda" value="Ne" required /> Ne</label>
-        </div>
-
-        <div>
-          <label class="block mb-2">3. Možete li normalno disati dok nosite udlagu?</label>
-          <label><input type="radio" name="Disanje" value="Da" required /> Da</label><br>
-          <label><input type="radio" name="Disanje" value="Ne" required /> Ne</label>
-        </div>
-
-        <div>
-          <label class="block mb-2">4. Možete li normalno govoriti dok nosite udlagu?</label>
-          <label><input type="radio" name="Govor" value="Da" required /> Da</label><br>
-          <label><input type="radio" name="Govor" value="Ne" required /> Ne</label>
-        </div>
-
-      </div>
-
-      <button type="button" data-next-step="4"
-              class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg">
-        Dalje →
-      </button>
-
+        
+        <button type="button" data-next-step="4" class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg">
+            Dalje →
+        </button>
     </form>
 
     <form id="page4" data-step="4" class="hidden space-y-7 text-white fade">
@@ -287,7 +257,7 @@
         </div>
       </div>
 
-      <div>
+      <div id="q4_ozljeda">
         <label class="block mb-2">2. Jeste li ikada pretrpjeli ozljedu zuba, usana ili čeljusti tijekom sporta?</label>
         <div class="flex gap-4">
           <label><input type="radio" name="PretrpioOzljedu" value="Da" required /> Da</label>
@@ -295,7 +265,7 @@
         </div>
       </div>
 
-      <div>
+      <div id="q4_vrsta_ozljede" class="hidden">
         <label class="block mb-2">3. Ako da, koja vrsta ozljede?</label>
         <div class="grid grid-cols-2 gap-2">
           <label><input type="checkbox" name="VrstaOzljede" value="Puknuće zuba" /> Puknuće zuba</label>
@@ -325,8 +295,7 @@
         </div>
       </div>
 
-      <button type="button" data-next-step="5"
-              class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg">
+      <button type="button" data-next-step="5" class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg">
         Dalje →
       </button>
 
@@ -336,46 +305,48 @@
 
       <h2 class="text-xl font-semibold mb-4 text-center">V. USPOREDBA KONFEKCIJSKIH I INDIVIDUALNIH UDLAGA</h2>
 
-      <div>
+      <div id="q5_koristili_obje">
         <label class="block mb-2">1. Ako ste koristili obje vrste, koja vam je udobnija?</label>
         <div class="flex gap-4">
           <label><input type="radio" name="UdobnijaVrsta" value="Individualna" required /> Individualna</label>
           <label><input type="radio" name="UdobnijaVrsta" value="Konfekcijska" required /> Konfekcijska</label>
         </div>
       </div>
+      
+      <div id="q5_usporedba_detalji" class="space-y-7">
+        <div>
+            <label class="block mb-2">2. Koja vam omogućava lakše disanje?</label>
+            <div class="flex gap-4">
+                <label><input type="radio" name="LakšeDisanje" value="Individualna" required /> Individualna</label>
+                <label><input type="radio" name="LakšeDisanje" value="Konfekcijska" required /> Konfekcijska</label>
+            </div>
+        </div>
 
-      <div>
-        <label class="block mb-2">2. Koja vam omogućava lakše disanje?</label>
-        <div class="flex gap-4">
-          <label><input type="radio" name="LakšeDisanje" value="Individualna" required /> Individualna</label>
-          <label><input type="radio" name="LakšeDisanje" value="Konfekcijska" required /> Konfekcijska</label>
+        <div>
+            <label class="block mb-2">3. Koja bolje odgovara vašim zubima?</label>
+            <div class="flex gap-4">
+                <label><input type="radio" name="BoljeOdgovara" value="Individualna" required /> Individualna</label>
+                <label><input type="radio" name="BoljeOdgovara" value="Konfekcijska" required /> Konfekcijska</label>
+            </div>
+        </div>
+
+        <div>
+            <label class="block mb-2">4. Smatrate li da individualna udlaga opravdava višu cijenu?</label>
+            <div class="flex gap-4">
+                <label><input type="radio" name="IndividualnaOpravdavaCijenu" value="Da" required /> Da</label>
+                <label><input type="radio" name="IndividualnaOpravdavaCijenu" value="Ne" required /> Ne</label>
+            </div>
+        </div>
+
+        <div>
+            <label class="block mb-2">5. Koju biste preporučili drugima?</label>
+            <div class="flex gap-4">
+                <label><input type="radio" name="PreporukaVrste" value="Individualna" required /> Individualnu</label>
+                <label><input type="radio" name="PreporukaVrste" value="Konfekcijska" required /> Konfekcijsku</label>
+            </div>
         </div>
       </div>
-
-      <div>
-        <label class="block mb-2">3. Koja bolje odgovara vašim zubima?</label>
-        <div class="flex gap-4">
-          <label><input type="radio" name="BoljeOdgovara" value="Individualna" required /> Individualna</label>
-          <label><input type="radio" name="BoljeOdgovara" value="Konfekcijska" required /> Konfekcijska</label>
-        </div>
-      </div>
-
-      <div>
-        <label class="block mb-2">4. Smatrate li da individualna udlaga opravdava višu cijenu?</label>
-        <div class="flex gap-4">
-          <label><input type="radio" name="IndividualnaOpravdavaCijenu" value="Da" required /> Da</label>
-          <label><input type="radio" name="IndividualnaOpravdavaCijenu" value="Ne" required /> Ne</label>
-        </div>
-      </div>
-
-      <div>
-        <label class="block mb-2">5. Koju biste preporučili drugima?</label>
-        <div class="flex gap-4">
-          <label><input type="radio" name="PreporukaVrste" value="Individualna" required /> Individualnu</label>
-          <label><input type="radio" name="PreporukaVrste" value="Konfekcijska" required /> Konfekcijsku</label>
-        </div>
-      </div>
-
+      
       <div>
         <label class="block mb-2">6. Što je utjecalo na odabir vrste udlage?</label>
         <div class="grid grid-cols-2 gap-2">
@@ -395,8 +366,7 @@
         </div>
       </div>
 
-      <button type="button" data-next-step="6"
-              class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg">
+      <button type="button" data-next-step="6" class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg">
         Dalje →
       </button>
 
@@ -453,8 +423,7 @@
         </select>
       </div>
 
-      <button type="button" data-next-step="7"
-              class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg">
+      <button type="button" data-next-step="7" class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg">
         Dalje →
       </button>
 
@@ -504,16 +473,21 @@
         </div>
       </div>
 
-      <div>
+      <div id="q7_iritacija">
         <label class="block mb-2">6. Jeste li primijetili iritaciju ili ranice na desnima, jeziku ili obrazima zbog udlage?</label>
         <div class="flex gap-4">
           <label><input type="radio" name="IritacijaRanice" value="Da" required /> Da</label>
           <label><input type="radio" name="IritacijaRanice" value="Ne" required /> Ne</label>
         </div>
       </div>
+      
+      <div id="q7_komentar_iritacija" class="hidden">
+        <label class="block mb-2">7. Možete li ukratko opisati iritaciju?</label>
+        <textarea name="KomentarIritacija" class="w-full p-3 rounded-xl bg-white/10 border border-white/20 h-20"></textarea>
+      </div>
 
-      <button type="button" data-next-step="8"
-              class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg">
+
+      <button type="button" data-next-step="8" class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg">
         Dalje →
       </button>
 
@@ -523,9 +497,9 @@
 
       <h2 class="text-xl font-semibold mb-4 text-center">VIII. CIJENA I DOSTUPNOST</h2>
 
-      <div>
+      <div id="q8_cijena_udlage">
         <label class="block mb-2">1. Koliko ste platili svoju sportsku udlagu?</label>
-        <select name="CijenaUdlage" required class="w-full p-3 rounded-xl bg-white/10 border border-white/20">
+        <select name="CijenaUdlage" class="w-full p-3 rounded-xl bg-white/10 border border-white/20">
           <option value="" disabled selected>Odaberite...</option>
           <option>Manje od 10 €</option>
           <option>10-50 €</option>
@@ -541,7 +515,6 @@
           <label><input type="radio" name="CijenaOpravdana" value="Ne" required /> Ne</label>
         </div>
       </div>
-
       <div>
         <label class="block mb-2">3. Biste li bili spremni investirati u kvalitetniju udlagu?</label>
         <div class="flex gap-4">
@@ -558,8 +531,7 @@
         </div>
       </div>
 
-      <button type="button" data-next-step="9"
-              class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg">
+      <button type="button" data-next-step="9" class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg">
         Dalje →
       </button>
 
@@ -569,7 +541,7 @@
 
       <h2 class="text-xl font-semibold mb-4 text-center">IX. INFORMIRANOST I EDUKACIJA</h2>
 
-      <div>
+      <div id="q9_preporuka">
         <label class="block mb-2">1. Od koga ste dobili preporuku za nošenje sportske udlage?</label>
         <div class="grid grid-cols-2 gap-2">
           <label><input type="checkbox" name="Preporuka" value="Trenera" /> Trenera</label>
@@ -612,16 +584,12 @@
 
       <div>
         <label class="block mb-2">6. Imate li neki dodatni komentar ili prijedlog vezan uz sportske udlage?</label>
-        <textarea name="DodatniKomentar"
-               class="w-full p-3 rounded-xl bg-white/10 border border-white/20 h-24"
-               placeholder="Upišite ovdje..."
-        ></textarea>
+        <textarea name="DodatniKomentar" class="w-full p-3 rounded-xl bg-white/10 border border-white/20 h-24" placeholder="Upišite ovdje..."></textarea>
       </div>
 
       <div id="errorBox" class="mt-4"></div>
 
-      <button type="submit" id="finishBtn"
-              class="w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg">
+      <button type="submit" id="finishBtn" class="w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg">
         Pošalji
       </button>
 
@@ -629,7 +597,7 @@
 
   </div>
 
-<script>
+  <script>
 let answers = {};
 const totalSteps = 9;
 
@@ -642,7 +610,6 @@ const comfortValue = document.getElementById("comfortValue");
 
 
 function updateProgress(currentStep) {
-  // Izračun postotka
   const percentage = Math.round((currentStep / totalSteps) * 100);
   
   progressBar.style.width = `${percentage}%`;
@@ -660,11 +627,202 @@ function goToStep(currentStep, nextStep) {
   if (nextPage) {
     nextPage.classList.remove("hidden");
     nextPage.classList.add("fade"); 
+    
+    // Ovdje pokrećemo uvjetnu logiku za tu stranicu
+    if (nextStep === 2) handleConditionalPage2();
+    if (nextStep === 4) handleConditionalPage4();
+    if (nextStep === 5) handleConditionalPage5(); 
+    if (nextStep === 7) handleConditionalPage7();
+    if (nextStep === 8) handleConditionalPage8(); // NOVO
+    if (nextStep === 9) handleConditionalPage9(); // NOVO
   }
 
   updateProgress(nextStep);
-  document.querySelector('.min-h-screen.flex').scrollTo(0, 0); 
+  document.body.scrollTo(0, 0); 
 }
+
+// Funkcija za postavljanje/uklanjanje 'required' atributa za cijeli kontejner
+function toggleRequired(container, isRequired) {
+    container.querySelectorAll('input, select, textarea').forEach(element => {
+        // Preskače elemente koji su isključeni (disabled)
+        if (element.hasAttribute('disabled')) return;
+        
+        // Postavi obaveznost
+        element.required = isRequired;
+
+        // Ako nije obavezno, resetiraj vrijednost i očisti odgovore
+        if (!isRequired) {
+            if (element.type === 'radio' || element.type === 'checkbox') {
+                element.checked = false;
+            } else if (element.tagName === 'SELECT') {
+                // Vrati na prvu opciju (koja bi trebala biti disabled selected)
+                if (element.options.length > 0) element.value = element.options[0].value;
+            } else if (element.tagName === 'TEXTAREA' || element.type === 'text' || element.type === 'number') {
+                element.value = '';
+            }
+            // Ukloni polje iz 'answers' objekta
+            delete answers[element.name];
+        }
+    });
+}
+
+// ----------------------------------------------------------------------
+// UVJETNA LOGIKA ZA STRANICU 2 (KORIŠTENJE UDLAGE I OBRNUTA LOGIKA)
+// ----------------------------------------------------------------------
+function handleConditionalPage2() {
+    const q1Radio = document.querySelectorAll('input[name="KoristenjeUdlage"]');
+    const q2RazlogNe = document.getElementById('q2_razlog_ne');
+    const q3q6Da = document.getElementById('q2_da_group'); 
+    const nextButton = document.getElementById('page2_next_btn');
+    
+    const updateVisibility = () => {
+        const selectedValue = document.querySelector('input[name="KoristenjeUdlage"]:checked')?.value;
+        
+        if (selectedValue === 'Da') {
+            // ODGOVOR: Da
+            q3q6Da.classList.remove('hidden');
+            toggleRequired(q3q6Da, true); // Polja postaju obavezna
+            
+            q2RazlogNe.classList.add('hidden');
+            toggleRequired(q2RazlogNe, false);
+
+            nextButton.dataset.nextStep = "3";
+            
+        } else if (selectedValue === 'Ne') {
+            // ODGOVOR: Ne
+            q3q6Da.classList.add('hidden');
+            toggleRequired(q3q6Da, false);
+
+            q2RazlogNe.classList.remove('hidden');
+            toggleRequired(q2RazlogNe, false); 
+
+            nextButton.dataset.nextStep = "4"; // Ide na S4 (Preskače S3)
+
+        } else {
+            // INICIJALNI ULAZ NA STRANICU (Obrnut prikaz: vidljivo, ali nije obavezno)
+            q3q6Da.classList.remove('hidden');
+            toggleRequired(q3q6Da, false); 
+
+            q2RazlogNe.classList.add('hidden');
+            toggleRequired(q2RazlogNe, false);
+
+            nextButton.dataset.nextStep = "3"; 
+        }
+    };
+
+    q1Radio.forEach(radio => radio.removeEventListener('change', updateVisibility)); 
+    q1Radio.forEach(radio => radio.addEventListener('change', updateVisibility));
+    
+    updateVisibility();
+}
+
+// ----------------------------------------------------------------------
+// UVJETNA LOGIKA ZA STRANICU 4 (OZLJEDA)
+// ----------------------------------------------------------------------
+function handleConditionalPage4() {
+    const q2Radio = document.querySelectorAll('input[name="PretrpioOzljedu"]');
+    const q3VrstaOzljede = document.getElementById('q4_vrsta_ozljede');
+    
+    const updateVisibility = () => {
+        const selectedValue = document.querySelector('input[name="PretrpioOzljedu"]:checked')?.value;
+        
+        if (selectedValue === 'Da') {
+            q3VrstaOzljede.classList.remove('hidden');
+        } else {
+            q3VrstaOzljede.classList.add('hidden');
+            toggleRequired(q3VrstaOzljede, false);
+        }
+    };
+
+    q2Radio.forEach(radio => radio.removeEventListener('change', updateVisibility));
+    q2Radio.forEach(radio => radio.addEventListener('change', updateVisibility));
+    
+    updateVisibility();
+}
+
+// ----------------------------------------------------------------------
+// UVJETNA LOGIKA ZA STRANICU 5 (USPOREDBA)
+// ----------------------------------------------------------------------
+function handleConditionalPage5() {
+    const koristiUdlagu = answers['KoristenjeUdlage'] === 'Da';
+    const usporedbaDetalji = document.getElementById('q5_usporedba_detalji');
+    const q5KoristiliObje = document.getElementById('q5_koristili_obje');
+    
+    if (!koristiUdlagu) {
+        q5KoristiliObje.classList.add('hidden');
+        toggleRequired(q5KoristiliObje, false);
+        
+        usporedbaDetalji.classList.add('hidden');
+        toggleRequired(usporedbaDetalji, false); 
+        
+    } else {
+        q5KoristiliObje.classList.remove('hidden');
+        toggleRequired(q5KoristiliObje, true);
+        
+        usporedbaDetalji.classList.remove('hidden');
+        toggleRequired(usporedbaDetalji, true);
+    }
+}
+
+// ----------------------------------------------------------------------
+// UVJETNA LOGIKA ZA STRANICU 7 (IRITACIJA)
+// ----------------------------------------------------------------------
+function handleConditionalPage7() {
+    const q6Radio = document.querySelectorAll('input[name="IritacijaRanice"]');
+    const q7Komentar = document.getElementById('q7_komentar_iritacija');
+    
+    const updateVisibility = () => {
+        const selectedValue = document.querySelector('input[name="IritacijaRanice"]:checked')?.value;
+        
+        if (selectedValue === 'Da') {
+            q7Komentar.classList.remove('hidden');
+            q7Komentar.querySelector('textarea').required = true;
+            
+        } else {
+            q7Komentar.classList.add('hidden');
+            toggleRequired(q7Komentar, false);
+        }
+    };
+
+    q6Radio.forEach(radio => radio.removeEventListener('change', updateVisibility));
+    q6Radio.forEach(radio => radio.addEventListener('change', updateVisibility));
+    
+    updateVisibility();
+}
+
+// ----------------------------------------------------------------------
+// UVJETNA LOGIKA ZA STRANICU 8 (CIJENA UDLAGE) - NOVO
+// ----------------------------------------------------------------------
+function handleConditionalPage8() {
+    const koristiUdlagu = answers['KoristenjeUdlage'] === 'Da';
+    const q8Cijena = document.getElementById('q8_cijena_udlage');
+    
+    if (koristiUdlagu) {
+        q8Cijena.classList.remove('hidden');
+        toggleRequired(q8Cijena, true); // Pitanje je obavezno
+    } else {
+        q8Cijena.classList.add('hidden');
+        toggleRequired(q8Cijena, false);
+    }
+}
+
+// ----------------------------------------------------------------------
+// UVJETNA LOGIKA ZA STRANICU 9 (PREPORUKA) - NOVO
+// ----------------------------------------------------------------------
+function handleConditionalPage9() {
+    const koristiUdlagu = answers['KoristenjeUdlage'] === 'Da';
+    const q9Preporuka = document.getElementById('q9_preporuka');
+    
+    if (koristiUdlagu) {
+        q9Preporuka.classList.remove('hidden');
+        // Checkbox polja nisu obavezna po defaultu
+        toggleRequired(q9Preporuka, false);
+    } else {
+        q9Preporuka.classList.add('hidden');
+        toggleRequired(q9Preporuka, false);
+    }
+}
+
 
 // Globalni slušatelj za sve "Dalje" tipke
 nextBtns.forEach(button => {
@@ -673,9 +831,9 @@ nextBtns.forEach(button => {
 
     const currentForm = e.target.closest('form');
     const currentStep = parseInt(currentForm.dataset.step);
-    const nextStep = parseInt(e.target.dataset.nextStep);
+    let nextStep = parseInt(e.target.dataset.nextStep); 
     
-    // 1. Validacija forme
+    // 1. Validacija forme 
     if (!currentForm.checkValidity()) {
         currentForm.reportValidity();
         return;
@@ -684,7 +842,6 @@ nextBtns.forEach(button => {
     // 2. Pohrani podatke trenutne forme
     const formData = new FormData(currentForm);
     
-    // Clear checkbox array for current form to prevent duplicates on revisit
     currentForm.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
         if (answers[checkbox.name]) {
              answers[checkbox.name] = [];
@@ -694,20 +851,32 @@ nextBtns.forEach(button => {
     formData.forEach((v, k) => {
         const element = currentForm.querySelector(`[name="${k}"]`);
         
+        // Provjerava je li polje skriveno prije spremanja
+        if (element && element.closest('.hidden')) {
+            return;
+        }
+
         if (element && element.type === 'checkbox') {
-            // Checkbox: skupljamo sve čekirane vrijednosti u polje
             if (!answers[k]) answers[k] = [];
             answers[k].push(v);
-        } else if (element && element.type !== 'radio') {
-            // Ostali elementi (text, number, select)
-            answers[k] = v;
-        } else if (element && element.type === 'radio' && v !== "") {
-             // Radio buttoni (samo ako imaju vrijednost)
+        } else if (element && element.type === 'radio') {
              answers[k] = v;
+        } else if (element) {
+            answers[k] = v;
         }
     });
 
-    // 3. Prijelaz na sljedeći korak
+    // 3. Prijelaz na sljedeći korak s UVJETNIM PRESKAKANJEM
+    
+    if (answers['KoristenjeUdlage'] === 'Ne') {
+        // Ako NE koristi udlagu, preskačemo sve vezano za udlagu.
+        if (currentStep === 4) {
+             // Sa Stranice 4 skačemo na Stranicu 8 (preskače 5, 6, 7)
+             nextStep = 8;
+        } 
+    }
+    
+    
     if (nextStep <= totalSteps) {
       goToStep(currentStep, nextStep);
     }
@@ -722,25 +891,22 @@ comfortSlider?.addEventListener("input", () => {
 });
 
 // Slušatelj za zadnju formu (Pošalji)
-document.getElementById('page9').addEventListener("submit", async (e) => { // Dodano 'async'
+document.getElementById('page9').addEventListener("submit", async (e) => {
     e.preventDefault();
     
     const currentForm = e.target.closest('form');
-    const errorBox = document.getElementById("errorBox"); // Dohvat errorBox-a
+    const errorBox = document.getElementById("errorBox");
 
-    // Očisti prethodne greške
     errorBox.innerHTML = '';
     
-    // 1. Validacija
     if (!currentForm.checkValidity()) {
         currentForm.reportValidity();
         return;
     }
 
-    // 2. Pohrani finalne podatke forme 9 u 'answers' objekt
+    // Pohrani finalne podatke forme 9
     const formData = new FormData(currentForm);
     
-    // Čišćenje polja checkboxa prije pohrane finalnih vrijednosti
     currentForm.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
         if (answers[checkbox.name]) {
              answers[checkbox.name] = [];
@@ -749,6 +915,7 @@ document.getElementById('page9').addEventListener("submit", async (e) => { // Do
 
     formData.forEach((v, k) => {
         const element = currentForm.querySelector(`[name="${k}"]`);
+        
          if (element && element.type === 'checkbox') {
             if (!answers[k]) answers[k] = [];
             answers[k].push(v);
@@ -757,14 +924,10 @@ document.getElementById('page9').addEventListener("submit", async (e) => { // Do
         }
     });
 
-    console.log("Konačni odgovori za slanje:", answers);
-    
-    // *** INTEGRIRANI KOD ZA SLANJE NA BACKEND ***
+    // Kod za slanje na backend (Koristi http://localhost:3001/send-email)
     try {
-        // Priprema podataka za slanje: koristimo globalni answers objekt
         const payload = answers; 
         
-        // Onemogući gumb za slanje tijekom slanja
         const submitButton = document.getElementById('finishBtn');
         submitButton.disabled = true;
         submitButton.textContent = "Šaljem...";
@@ -780,13 +943,9 @@ document.getElementById('page9').addEventListener("submit", async (e) => { // Do
         const result = await response.json();
 
         if (response.ok) {
-            // Uspjeh
             alert("Email uspješno poslan! Hvala Vam na sudjelovanju.");
-            currentForm.reset(); // Resetiraj formu
-            // Opcionalno, preusmjeri korisnika ili prikaži poruku
-            // window.location.href = '/thank-you.html'; 
+            currentForm.reset();
         } else {
-            // Backend greška
             errorBox.innerHTML = `
                 <div class="bg-red-500/20 border border-red-500 text-red-300 p-3 rounded-xl mt-4">
                     Greška: ${result.message || 'Nepoznata greška na serveru.'}
@@ -806,11 +965,44 @@ document.getElementById('page9').addEventListener("submit", async (e) => { // Do
     }
 });
 
-// Inicijalizacija: Postavi početnu vrijednost klizača i trake napretka
+// Inicijalizacija
 if (comfortSlider) {
     comfortValue.textContent = comfortSlider.value;
 }
 updateProgress(1);
+
+// Prilikom prvog učitavanja, osiguraj da su sva uvjetna polja opcionalna
+document.addEventListener('DOMContentLoaded', () => {
+    // Page 2: Q3-Q6
+    const q2_da_group = document.getElementById('q2_da_group');
+    if (q2_da_group) toggleRequired(q2_da_group, false); 
+    
+    // Page 4: Q3
+    const q4_vrsta_ozljede = document.getElementById('q4_vrsta_ozljede');
+    if (q4_vrsta_ozljede) toggleRequired(q4_vrsta_ozljede, false);
+    
+    // Page 5: Sva pitanja su uvjetna
+    const usporedbaDetalji = document.getElementById('q5_usporedba_detalji');
+    const q5KoristiliObje = document.getElementById('q5_koristili_obje');
+    if (usporedbaDetalji) toggleRequired(usporedbaDetalji, false);
+    if (q5KoristiliObje) toggleRequired(q5KoristiliObje, false);
+    
+    // Page 7: Q7
+    const q7_komentar_iritacija = document.getElementById('q7_komentar_iritacija');
+    if (q7_komentar_iritacija) toggleRequired(q7_komentar_iritacija, false);
+    
+    // Page 8: Q1
+    const q8_cijena_udlage = document.getElementById('q8_cijena_udlage');
+    if (q8_cijena_udlage) toggleRequired(q8_cijena_udlage, false); 
+    
+    // Page 9: Q1
+    const q9_preporuka = document.getElementById('q9_preporuka');
+    if (q9_preporuka) toggleRequired(q9_preporuka, false);
+    
+    if (!document.getElementById('page2').classList.contains('hidden')) {
+         handleConditionalPage2();
+    }
+});
 </script>
 
 </body>
