@@ -1529,12 +1529,10 @@ document.getElementById('page9').addEventListener("submit", async (e) => {
     try {
         // 2. API POZIV (KORISTIMO answers kao payload)
         const payload = answers;
-        const response = await fetch("https://anketa-server-red.vercel.app/send-email", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
+        const response = await fetch("https://anketa-server-red.vercel.app/api/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(answers)
         });
 
         // 3. OBRADA ODGOVORA
