@@ -61,10 +61,12 @@
 
   <div class="w-full max-w-xl p-8 bg-white/10 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.6)] fade">
     
-    <div class="flex justify-end mb-4">
+    <div class="flex justify-end mb-4 gap-2">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/1280px-Flag_of_Croatia.svg.png" alt="Hrvatski" id="hrFlag" data-lang="hr"
-            class="flag-icon active inline-block mr-2 rounded cursor-pointer">
+            class="flag-icon active inline-block rounded cursor-pointer">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/1280px-Flag_of_the_United_Kingdom_%283-5%29.svg.png" alt="English" id="enFlag" data-lang="en"
+            class="flag-icon inline-block rounded cursor-pointer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" alt="Deutsch" id="deFlag" data-lang="de"
             class="flag-icon inline-block rounded cursor-pointer">
     </div>
 
@@ -503,53 +505,11 @@
       </div>
 
 
-      <button type="button" data-next-step="8" class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg" id="btn_next_p7">
+      <button type="button" data-next-step="9" class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg" id="btn_next_p7">
         Dalje →
       </button>
 
     </form>
-
-    <form id="page8" data-step="8" class="hidden space-y-7 text-white fade">
-
-      <h2 class="text-xl font-semibold mb-4 text-center" id="p8_title">VIII. CIJENA I DOSTUPNOST</h2>
-
-      <div id="q8_cijena_udlage">
-        <label class="block mb-2" id="p8_q1">1. Koliko ste platili svoju sportsku udlagu?</label>
-        <select name="CijenaUdlage" class="w-full p-3 rounded-xl bg-white/10 border border-white/20" id="p8_q1_select">
-          <option value="" disabled selected id="p8_q1_opt0">Odaberite...</option>
-          <option id="p8_q1_opt1">Manje od 10 €</option>
-          <option id="p8_q1_opt2">10-50 €</option>
-          <option id="p8_q1_opt3">50-100 €</option>
-          <option id="p8_q1_opt4">Više od 100 €</option>
-        </select>
-      </div>
-
-      <div>
-        <label class="block mb-2" id="p8_q2">2. Smatrate li da je cijena udlage opravdana u odnosu na kvalitetu?</label>
-        <div class="flex gap-4">
-          <label><input type="radio" name="CijenaOpravdana" value="Da" required /> <span data-id="opt_da">Da</span></label>
-          <label><input type="radio" name="CijenaOpravdana" value="Ne" required /> <span data-id="opt_ne">Ne</span></label>
-        </div>
-      </div>
-      <div>
-        <label class="block mb-2" id="p8_q3">3. Biste li bili spremni investirati u kvalitetniju udlagu?</label>
-        <div class="flex gap-4">
-          <label><input type="radio" name="SpremnostInvestiranja" value="Da" required /> <span data-id="opt_da">Da</span></label>
-          <label><input type="radio" name="SpremnostInvestiranja" value="Ne" required /> <span data-id="opt_ne">Ne</span></label>
-        </div>
-      </div>
-
-      <div>
-        <label class="block mb-2" id="p8_q4">4. Jeste li zadovoljni dostupnošću sportskih udlaga na tržištu?</label>
-        <div class="flex gap-4">
-          <label><input type="radio" name="ZadovoljstvoDostupnošću" value="Da" required /> <span data-id="opt_da">Da</span></label>
-          <label><input type="radio" name="ZadovoljstvoDostupnošću" value="Ne" required /> <span data-id="opt_ne">Ne</span></label>
-        </div>
-      </div>
-
-      <button type="button" data-next-step="9" class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg" id="btn_next_p8">
-        Dalje →
-      </button>
 
     </form>
 
@@ -958,6 +918,177 @@
         'p9_q5': '5. Do you think sports mouthguards should be mandatory in all contact sports?',
         'p9_q6': '6. Do you have any additional comments or suggestions related to sports mouthguards?',
         'p9_q6_placeholder': 'Type here...'
+      },
+      'de': {
+        // General
+        'title': 'Professionelle Umfrage',
+        'btn_next': 'Weiter →',
+        'btn_finish': 'Absenden',
+        'opt_da': 'Ja',
+        'opt_ne': 'Nein',
+        'opt_uvijek': 'Immer',
+        'opt_ponekad': 'Manchmal',
+        'opt_nikad': 'Nie',
+        'opt_odaberite': 'Auswählen...',
+        'opt_individualna': 'Individuell',
+        'opt_konfekcijska': 'Konfektioniert',
+        'opt_individualnu': 'Individuelle',
+        'opt_konfekcijsku': 'Konfektionierte',
+        'placeholder_drugo': 'Andere...',
+        'placeholder_upisite': 'Hier eingeben...',
+        'alert_success': 'E-Mail erfolgreich gesendet! Vielen Dank für Ihre Teilnahme!',
+        'p3_q1_value_text': 'Wert',
+        'err_server_base': 'Beim Senden ist ein Fehler aufgetreten.',
+        'err_server_connect': 'Fehler bei der Verbindung zum Server.',
+        'btn_sending': 'Wird gesendet...',
+
+        // Page 1
+        'p1_title': 'I. ALLGEMEINE INFORMATIONEN',
+        'p1_q1': '1. Geschlecht:',
+        'p1_q1_opt1': 'Männlich',
+        'p1_q1_opt2': 'Weiblich',
+        'p1_q1_opt3': 'Andere',
+        'p1_q2': '2. Alter:',
+        'p1_q3': '3. In welchem Land trainieren Sie?',
+        'p1_q4': '4. In welcher Stadt trainieren Sie?',
+        'p1_q5': '5. Welche Kontaktsportart betreiben Sie?',
+        'p1_q5_opt1': 'Boxen',
+        'p1_q5_opt2': 'Kickboxen',
+        'p1_q5_opt3': 'MMA',
+        'p1_q5_opt4': 'Rugby',
+        'p1_q5_opt5': 'Hockey',
+        'p1_q5_opt6': 'Karate',
+        'p1_q5_opt7': 'Taekwondo',
+        'p1_q5_opt8': 'Ringen',
+        'p1_q5_placeholder': 'Andere...',
+        'p1_q6': '6. Wie lange betreiben Sie diesen Sport?',
+        'p1_q6_opt1': 'Weniger als 1 Jahr',
+        'p1_q6_opt2': '1–3 Jahre',
+        'p1_q6_opt3': '3–5 Jahre',
+        'p1_q6_opt4': 'Mehr als 5 Jahre',
+        'p1_q7': '7. Wie oft trainieren Sie?',
+        'p1_q7_opt1': 'Weniger als 2 Mal pro Woche',
+        'p1_q7_opt2': '2–4 Mal pro Woche',
+        'p1_q7_opt3': '5 Mal oder öfter pro Woche',
+
+        // Page 2
+        'p2_title': 'II. ERFAHRUNG MIT SPORTMUNDSCHUTZ',
+        'p2_q1': '1. Verwenden Sie einen Sportmundschutz?',
+        'p2_q2': '2. Wenn nein, warum nicht?',
+        'p2_q2_opt1': 'Ich brauche ihn nicht',
+        'p2_q2_opt2': 'Er ist unbequem',
+        'p2_q2_opt3': 'Zu teuer',
+        'p2_q2_opt4': 'Ich wusste nicht, dass ich ihn brauche',
+        'p2_q2_opt5': 'Aus ästhetischen Gründen',
+        'p2_q3': '3. Wenn ja, welche Art verwenden Sie?',
+        'p2_q3_opt1': 'Konfektioniert',
+        'p2_q3_opt2': 'Boil-and-bite (semi-individuell)',
+        'p2_q3_opt3': 'Individuell',
+        'p2_q4': '4. Wie oft verwenden Sie ihn im Training?',
+        'p2_q4_opt1': 'Immer',
+        'p2_q4_opt2': 'Manchmal',
+        'p2_q4_opt3': 'Nie',
+        'p2_q5': '5. Wie oft verwenden Sie ihn im Wettkampf?',
+        'p2_q5_opt1': 'Immer',
+        'p2_q5_opt2': 'Manchmal',
+        'p2_q5_opt3': 'Nie',
+        'p2_q6': '6. Wo haben Sie ihn bekommen?',
+        'p2_q6_opt1': 'Sportgeschäft',
+        'p2_q6_opt2': 'Online',
+        'p2_q6_opt3': 'Beim Zahnarzt',
+        'p2_q6_opt4': 'Vom Trainer/Verein',
+
+        // Page 3
+        'p3_title': 'III. KOMFORT UND ANPASSUNG',
+        'p3_q1': '1. Wie bewerten Sie den Komfort Ihres Mundschutzes (VAS-Skala)?',
+        'p3_q2': '2. Spüren Sie Druck oder Unbehagen im Mund?',
+        'p3_q3': '3. Können Sie normal atmen?',
+        'p3_q4': '4. Können Sie normal sprechen?',
+
+        // Page 4
+        'p4_title': 'IV. SCHUTZ UND FUNKTIONALITÄT',
+        'p4_q1': '1. Bietet der Mundschutz ausreichend Schutz?',
+        'p4_q2': '2. Hatten Sie jemals Verletzungen an Zähnen, Lippen oder Kiefer?',
+        'p4_q3': '3. Wenn ja, welche?',
+        'p4_q3_opt1': 'Zahnbruch',
+        'p4_q3_opt2': 'Zahnverlust (Avulsion)',
+        'p4_q3_opt3': 'Zungen-/Wangenbiss',
+        'p4_q3_opt4': 'Kieferverletzung',
+        'p4_q3_opt5': 'Kiefergelenkverletzung',
+        'p4_q3_placeholder': 'Andere...',
+        'p4_q4': '4. Verletzung trotz Mundschutz?',
+        'p4_q5': '5. Fühlen Sie sich sicherer damit?',
+
+        // Page 5
+        'p5_title': 'V. VERGLEICH VON MUNDSCHUTZARTEN',
+        'p5_q1': '1. Welche ist bequemer?',
+        'p5_q2': '2. Welche erleichtert das Atmen?',
+        'p5_q3': '3. Welche passt besser?',
+        'p5_q4': '4. Rechtfertigt individuell den Preis?',
+        'p5_q5': '5. Welche würden Sie empfehlen?',
+        'p5_q6': '6. Was beeinflusste Ihre Wahl?',
+        'p5_q6_opt1': 'Preis',
+        'p5_q6_opt2': 'Verfügbarkeit',
+        'p5_q6_opt3': 'Empfehlung Mitspieler',
+        'p5_q6_opt4': 'Empfehlung Trainer',
+        'p5_q7': '7. Zusätzliche Schutzausrüstung?',
+        'p5_q7_opt2': 'Kinnschutz',
+        'p5_q7_opt3': 'Helm mit Kieferschutz',
+
+        // Page 6
+        'p6_title': 'VI. PFLEGE UND HYGIENE',
+        'p6_q1': '1. Wie oft reinigen Sie ihn?',
+        'p6_q1_opt1': 'Nach jeder Nutzung',
+        'p6_q1_opt2': 'Mehrmals pro Woche',
+        'p6_q1_opt3': 'Einmal pro Woche',
+        'p6_q1_opt4': 'Gar nicht',
+        'p6_q2': '2. Wie reinigen Sie ihn?',
+        'p6_q2_opt1': 'Mit Wasser',
+        'p6_q2_opt2': 'Mit Zahnbürste & Paste',
+        'p6_q2_opt3': 'Mit speziellen Lösungen',
+        'p6_q2_opt4': 'Gar nicht',
+        'p6_q3': '3. Unangenehmer Geruch?',
+        'p6_q4': '4. Farbveränderung?',
+        'p6_q5': '5. Wie lange nutzen Sie einen?',
+        'p6_q5_opt1': '< 3 Monate',
+        'p6_q5_opt2': '3–6 Monate',
+        'p6_q5_opt3': '6–12 Monate',
+        'p6_q5_opt4': '> 1 Jahr',
+
+        // Page 7
+        'p7_title': 'VII. EINFLUSS AUF LEISTUNG',
+        'p7_q1': '1. Beeinträchtigt er Ihre Leistung?',
+        'p7_q2': '2. Würgereflex?',
+        'p7_q3': '3. Kieferermüdung?',
+        'p7_q4': '4. Erschwert Kommunikation?',
+        'p7_q5': '5. Leicht daran gewöhnt?',
+        'p7_q6': '6. Reizungen im Mund?',
+        'p7_q7': '7. Beschreiben Sie kurz:',
+        'p7_q7_placeholder': 'Hier eingeben...',
+
+        // Page 8
+        'p8_title': 'VIII. PREIS UND VERFÜGBARKEIT',
+        'p8_q1': '1. Wie viel haben Sie für Ihren Mundschutz bezahlt?',
+        'p8_q1_opt1': '< 10 €',
+        'p8_q1_opt2': '10–50 €',
+        'p8_q1_opt3': '50–100 €',
+        'p8_q1_opt4': '> 100 €',
+        'p8_q2': '2. Halten Sie den Preis im Verhältnis zur Qualität für gerechtfertigt?',
+        'p8_q3': '3. Wären Sie bereit, in einen hochwertigeren Mundschutz zu investieren?',
+        'p8_q4': '4. Sind Sie mit der Verfügbarkeit von Mundschutzprodukten zufrieden?',
+
+        // Page 9
+        'p9_title': 'IX. INFORMIERTHEIT UND AUFKLÄRUNG',
+        'p9_q1': '1. Von wem haben Sie die Empfehlung erhalten, einen Mundschutz zu tragen?',
+        'p9_q1_opt1': 'Trainer',
+        'p9_q1_opt2': 'Zahnarzt',
+        'p9_q1_opt3': 'Teamkollege',
+        'p9_q2': '2. Fühlen Sie sich ausreichend über die Bedeutung von Mundschutz informiert?',
+        'p9_q3': '3. Sollte mehr Aufklärung über den Schutz von Zähnen und Kiefer stattfinden?',
+        'p9_q4': '4. Sollten Zahnärzte die Verwendung von Mundschutz stärker fördern?',
+        'p9_q5': '5. Sollte Mundschutz in allen Kontaktsportarten verpflichtend sein?',
+        'p9_q6': '6. Haben Sie zusätzliche Kommentare oder Vorschläge?',
+        'p9_q6_placeholder': 'Hier eingeben...'
       }
     };
 
@@ -1054,7 +1185,7 @@
     }
 
     let answers = {};
-    const totalSteps = 9;
+    const totalSteps = 8;
 
     // Selektori
     const nextBtns = document.querySelectorAll('.next-btn');
@@ -1330,7 +1461,7 @@
         // 2.2 IMPLEMENTACIJA PRESKAKANJA P5, P6, P7
         if (currentStep === 4) {
             if (koristenjeUdlageAnswer === 'Ne') {
-                nextStep = 8; // Preskoči na S8
+                nextStep = 9; // Preskoči na S8
             } else {
                 nextStep = 5; // Standardno na S5
             }
@@ -1347,6 +1478,7 @@
     // Slušatelji za zastave
     document.getElementById('hrFlag').addEventListener('click', () => setLanguage('hr'));
     document.getElementById('enFlag').addEventListener('click', () => setLanguage('en'));
+    document.getElementById('deFlag').addEventListener('click', () => setLanguage('de'));
 
     // Slušatelj za klizač udobnosti (stranica 3)
     if (comfortSlider) {
