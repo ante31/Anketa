@@ -1275,6 +1275,15 @@
         requiredGroups.forEach(group => {
             const groupName = group.getAttribute('data-min-required-group');
             const checkboxes = group.querySelectorAll(`input[type="checkbox"][name="${groupName}"]`);
+
+            const otherField = form.querySelector('input[name="VrstaOzljedeDrugo"]');
+            if (otherField && otherField.value.trim() !== "") {
+                // Ukloni crveni okvir ako postoji
+                group.style.border = '';
+                group.style.padding = '';
+                group.style.borderRadius = '';
+                return true;
+            }
             
             // Provjeri samo ako je grupa vidljiva (nije skrivena roditeljskim elementom)
             if (!group.closest('.hidden')) {
