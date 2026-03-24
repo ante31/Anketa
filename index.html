@@ -1178,7 +1178,6 @@ let answers = new Proxy({}, {
               `${naslov}: <span id="comfortValue" class="font-semibold">${trenutnaVrijednost}</span>/100`;
 
           // 4. Spremi točnu vrijednost u odgovore
-          answers['VAS'] = trenutnaVrijednost;
 
           // 5. Osvježi globalnu varijablu (ako ti baš treba negdje drugdje)
           comfortValue = document.getElementById("comfortValue");
