@@ -1239,7 +1239,12 @@
                 element.required = isRequired;
             }
         } else {
-             // Postavi obaveznost za ostale elemente (select, text, number)
+            // IZUZETAK: "Drugo..." polje nikad ne smije biti required
+            if (element.name === 'VrstaOzljedeDrugo') {
+                element.required = false;
+                return;
+            }
+        
             element.required = isRequired;
         }
 
