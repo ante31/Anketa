@@ -110,17 +110,17 @@
             <input type="text" name="Grad" required class="w-full p-3 rounded-xl bg-white/10 border border-white/20" />
         </div>
         
-        <div>
+        <div data-min-required-group="Sport">
             <label class="block mb-2" id="p1_q5">5. Kojim kontaktnim sportom se bavite?</label>
             <div class="grid grid-cols-2 gap-2">
-                <label><input type="radio" name="Sport" value="Boks" required /> <span data-id="p1_q5_opt1">Boks</span></label>
-                <label><input type="radio" name="Sport" value="Kickboxing" required /> <span data-id="p1_q5_opt2">Kickboxing</span></label>
-                <label><input type="radio" name="Sport" value="MMA" required /> <span data-id="p1_q5_opt3">MMA</span></label>
-                <label><input type="radio" name="Sport" value="Ragbi" required /> <span data-id="p1_q5_opt4">Ragbi</span></label>
-                <label><input type="radio" name="Sport" value="Hokej" required /> <span data-id="p1_q5_opt5">Hokej</span></label>
-                <label><input type="radio" name="Sport" value="Karate" required /> <span data-id="p1_q5_opt6">Karate</span></label>
-                <label><input type="radio" name="Sport" value="Taekwondo" required /> <span data-id="p1_q5_opt7">Taekwondo</span></label>
-                <label><input type="radio" name="Sport" value="Hrvanje" required /> <span data-id="p1_q5_opt8">Hrvanje</span></label>
+                <label><input type="radio" name="Sport" value="Boks" /> <span data-id="p1_q5_opt1">Boks</span></label>
+                <label><input type="radio" name="Sport" value="Kickboxing" /> <span data-id="p1_q5_opt2">Kickboxing</span></label>
+                <label><input type="radio" name="Sport" value="MMA" /> <span data-id="p1_q5_opt3">MMA</span></label>
+                <label><input type="radio" name="Sport" value="Ragbi" /> <span data-id="p1_q5_opt4">Ragbi</span></label>
+                <label><input type="radio" name="Sport" value="Hokej" /> <span data-id="p1_q5_opt5">Hokej</span></label>
+                <label><input type="radio" name="Sport" value="Karate" /> <span data-id="p1_q5_opt6">Karate</span></label>
+                <label><input type="radio" name="Sport" value="Taekwondo" /> <span data-id="p1_q5_opt7">Taekwondo</span></label>
+                <label><input type="radio" name="Sport" value="Hrvanje" /> <span data-id="p1_q5_opt8">Hrvanje</span></label>
             </div>
             <input type="text" placeholder="Drugo..." id="p1_q5_placeholder" name="SportDrugo" class="w-full mt-2 p-3 rounded-xl bg-white/10 border border-white/20" />
         </div>
@@ -1064,6 +1064,27 @@
     let currentLang = 'hr'; // Zadani jezik
     let koristenjeUdlageAnswer = ''; // Globalna varijabla za spremanje odgovora P2Q1 (Dodano)
 
+    // Inicijalizacija s Proxy-jem za automatsko praćenje
+let answers = new Proxy({}, {
+    set(target, prop, value) {
+        target[prop] = value;
+        
+        // --- LOGIRANJE PROMJENE ---
+        console.group(`%c Change in answers: ${prop}`, 'color: #00ff00; font-weight: bold;');
+        console.log("Nova vrijednost:", value);
+        console.log("Cijeli objekt:", { ...target });
+        console.groupEnd();
+        
+        return true;
+    },
+    deleteProperty(target, prop) {
+        console.warn(`Obrisano iz answers: ${prop}`);
+        delete target[prop];
+        return true;
+    }
+});
+    const totalSteps = 8;
+
     // Funkcija za prevođenje cijele stranice
     function setLanguage(lang) {
       currentLang = lang;
@@ -1144,17 +1165,25 @@
       });
       document.getElementById(`${lang}Flag`).classList.add('active');
 
-      // Ažuriraj tekst za VAS slider (p3_q1_value_text)
-      const comfortValueElement = document.getElementById('comfortValue');
-      if (comfortValueElement) {
-        document.getElementById('p3_q1_value_text').innerHTML = `${translations[lang]['p3_q1_value_text'].split(':')[0]}: <span id="comfortValue" class="font-semibold">${comfortValueElement.textContent}</span>/100`;
-        // ISPRAVAK: Re-fetch globalne varijable jer je innerHTML zamijenio element
-        comfortValue = document.getElementById("comfortValue");
+      // 1. Dohvati slider (izvor istine)
+      const slider = document.getElementById('comfortSlider');
+
+      if (slider) {
+          // 2. Uzmi vrijednost izravno sa slidera, a ne iz teksta
+          const trenutnaVrijednost = slider.value;
+
+          // 3. Ažuriraj tekst koristeći tu vrijednost
+          const naslov = translations[lang]['p3_q1_value_text'].split(':')[0];
+          document.getElementById('p3_q1_value_text').innerHTML = 
+              `${naslov}: <span id="comfortValue" class="font-semibold">${trenutnaVrijednost}</span>/100`;
+
+          // 4. Spremi točnu vrijednost u odgovore
+          answers['VAS'] = trenutnaVrijednost;
+
+          // 5. Osvježi globalnu varijablu (ako ti baš treba negdje drugdje)
+          comfortValue = document.getElementById("comfortValue");
       }
     }
-
-    let answers = {};
-    const totalSteps = 8;
 
     // Selektori
     const nextBtns = document.querySelectorAll('.next-btn');
@@ -1162,6 +1191,23 @@
     const progressText = document.getElementById("progressText");
     const comfortSlider = document.getElementById("comfortSlider");
     let comfortValue = document.getElementById("comfortValue"); // <--- AŽURIRANO: Promijenjeno u let kako bi se moglo re-fetchati
+
+// Ovaj kôd "sluša" svaku promjenu dok korisnik pomiče slider
+comfortSlider.oninput = function() {
+    const val = this.value;
+
+    // 1. Odmah ažuriraj broj na ekranu (da mama vidi promjenu)
+    const comfortValueDisp = document.getElementById('comfortValue');
+    if (comfortValueDisp) {
+        comfortValueDisp.textContent = val;
+    }
+
+    // 2. Odmah spremi vrijednost u objekt koji ide na server
+    answers['VAS'] = val;
+
+    console.log(`Slider value updated: ${val}`); // Debug log
+    console.log('Current answers object:', answers); // Debug log za cijeli objekt odgovora
+    };
 
     function updateProgress(currentStep) {
       const percentage = Math.round((currentStep / totalSteps) * 100);
@@ -1225,10 +1271,7 @@
           } else {
             element.value = '';
           }
-          // I obriši odgovor iz globalnog 'answers' objekta
-          if (element.name && answers[element.name]) {
-            delete answers[element.name];
-          }
+          
         }
       });
     }
@@ -1236,47 +1279,99 @@
     // ----------------------------------------------------------------------
     // CUSTOM VALIDACIJA ZA MINIMALNO JEDAN CHECKBOX
     // ----------------------------------------------------------------------
-    function validateMinCheckboxes(form) {
-        let isValid = true;
-        // Pronađi sve grupe koje zahtijevaju minimalno 1 odabir
-        const requiredGroups = form.querySelectorAll('[data-min-required-group]');
-        
-        requiredGroups.forEach(group => {
-            const groupName = group.getAttribute('data-min-required-group');
-            const checkboxes = group.querySelectorAll(`input[type="checkbox"][name="${groupName}"]`);
+    // --- FUNKCIJA ZA VALIDACIJU ---
+function validateMinCheckboxes(form) {
+    let isValid = true;
+    const requiredGroups = form.querySelectorAll('[data-min-required-group]');
+    
+    requiredGroups.forEach(group => {
+        if (group.closest('.hidden')) return;
 
-            const otherField = form.querySelector('input[name="VrstaOzljedeDrugo"]');
-            if (otherField && otherField.value.trim() !== "") {
-                // Ukloni crveni okvir ako postoji
-                group.style.border = '';
-                group.style.padding = '';
-                group.style.borderRadius = '';
-                return true;
-            }
-            
-            // Provjeri samo ako je grupa vidljiva (nije skrivena roditeljskim elementom)
-            if (!group.closest('.hidden')) {
-                const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
-                
-                if (checkedCount === 0) {
-                    isValid = false;
-                    // Dodaj privremenu klasu za vizualni feedback (npr. crveni obrub)
-                    group.style.border = '2px solid red';
-                    group.style.padding = '10px';
-                    group.style.borderRadius = '8px';
-                    
-                    // Važno: Ne prekidamo ovdje, želimo označiti sve nevaljane grupe na trenutnoj stranici
-                } else {
-                    // Ukloni vizualni feedback ako je validno
-                    group.style.border = '';
-                    group.style.padding = '';
-                    group.style.borderRadius = '';
-                }
-            }
-        });
+        const groupName = group.getAttribute('data-min-required-group');
+        const radios = group.querySelectorAll(`input[name="${groupName}"]`);
+        const otherField = group.querySelector(`input[name="${groupName}Drugo"]`);
 
-        return isValid;
+        // Provjeri radio gumbe
+        const isRadioChecked = Array.from(radios).some(r => r.checked);
+        // Provjeri tekstualno polje
+        const isOtherFilled = otherField && otherField.value.trim() !== "";
+
+        // BLOKADA: Ako NIŠTA nije odabrano/upisano
+        if (!isRadioChecked && !isOtherFilled) {
+            isValid = false;
+            group.style.border = '2px solid #ef4444';
+            group.style.padding = '10px';
+            group.style.borderRadius = '12px';
+        } else {
+            group.style.border = '';
+            group.style.padding = '';
+        }
+    });
+
+    return isValid;
+}
+
+// --- LOGIKA NA GUMBU 'NEXT' ---
+nextBtns.forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    const currentForm = e.target.closest('form');
+    const currentStep = parseInt(currentForm.dataset.step);
+    let nextStep = parseInt(e.target.dataset.nextStep);
+
+    // 1. Validacija (Standardna + Custom za grupe)
+    if (!currentForm.checkValidity()) {
+        currentForm.reportValidity();
+        return;
     }
+    if (!validateMinCheckboxes(currentForm)) return;
+
+    // 2. Pametno spremanje podataka
+    currentForm.querySelectorAll('input, select, textarea').forEach(element => {
+      const name = element.name;
+      if (!name) return;
+
+      // KLJUČNO: Ako je element skriven (roditelj ima .hidden), brišemo ga iz odgovora i preskačemo
+      if (element.closest('.hidden')) {
+        delete answers[name]; 
+        return;
+      }
+
+      if (element.type === 'checkbox') {
+        // Inicijaliziraj niz ako ne postoji
+        if (!answers[name]) answers[name] = [];
+        
+        if (element.checked) {
+          // Dodaj ako je označen i nije već u nizu
+          if (!answers[name].includes(element.value)) {
+            answers[name].push(element.value);
+          }
+        } else {
+          // Makni iz niza ako je odznačen
+          answers[name] = answers[name].filter(val => val !== element.value);
+          // Ako je niz prazan, obriši ključ skroz
+          if (answers[name].length === 0) delete answers[name];
+        }
+      } 
+      else if (element.type === 'radio') {
+        if (element.checked) answers[name] = element.value;
+      } 
+      else {
+        // Za text, number, textarea
+        if (element.value.trim() !== "") {
+          answers[name] = element.value;
+        } else {
+          delete answers[name];
+        }
+      }
+    });
+
+    // Posebna logika za navigaciju (ostaje ista)
+    if (currentStep === 2) koristenjeUdlageAnswer = answers['KoristenjeUdlage'];
+    if (currentStep === 4) nextStep = (koristenjeUdlageAnswer === 'Ne') ? 8 : 5;
+
+    goToStep(currentStep, nextStep);
+  });
+});
     
     // Dodatni event listener za uklanjanje crvenog okvira čim se odabere opcija
     document.querySelectorAll('[data-min-required-group] input[type="checkbox"]').forEach(checkbox => {
@@ -1406,13 +1501,7 @@
         
         // 2. Pohrani podatke trenutne forme
         
-        // Praznimo arraye za checkbox/radio grupe koje se sada tretiraju kao radio za single-select
-        // NOTE: Ostavljamo ovaj dio jer je answers globalni objekt, treba očistiti stare unose prije ponovnog spremanja
-        currentForm.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(element => {
-            if (element.name && answers[element.name]) {
-                delete answers[element.name]; 
-            }
-        });
+      
         
         // Prolazimo kroz sve elemente za spremanje, ignorirajući skrivene
         currentForm.querySelectorAll('input, select, textarea').forEach(element => {
@@ -1470,6 +1559,19 @@
       });
     }
 
+    document.addEventListener('input', (e) => {
+    const group = e.target.closest('[data-min-required-group]');
+    if (group) {
+        const groupName = group.getAttribute('data-min-required-group');
+        const radios = group.querySelectorAll(`input[name="${groupName}"]`);
+        const otherField = group.querySelector(`input[name="${groupName}Drugo"]`);
+
+        if (Array.from(radios).some(r => r.checked) || (otherField && otherField.value.trim() !== "")) {
+            group.style.border = '';
+            group.style.padding = '';
+        }
+    }
+});
 
     // Slušatelj za zadnju formu (Pošalji)
 document.getElementById('page8').addEventListener("submit", async (e) => {
