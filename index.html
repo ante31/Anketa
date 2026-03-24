@@ -505,7 +505,7 @@
       </div>
 
 
-      <button type="button" data-next-step="9" class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg" id="btn_next_p7">
+      <button type="button" data-next-step="8" class="next-btn w-full mt-6 py-3 rounded-xl font-semibold text-lg bg-indigo-600 hover:bg-indigo-700 shadow-lg" id="btn_next_p7">
         Dalje →
       </button>
 
@@ -513,22 +513,22 @@
 
     </form>
 
-    <form id="page9" data-step="9" class="hidden space-y-7 text-white fade">
+    <form id="page8" data-step="8" class="hidden space-y-7 text-white fade">
 
-      <h2 class="text-xl font-semibold mb-4 text-center" id="p9_title">IX. INFORMIRANOST I EDUKACIJA</h2>
+      <h2 class="text-xl font-semibold mb-4 text-center" id="p8_title">IX. INFORMIRANOST I EDUKACIJA</h2>
 
       <div>
-        <label class="block mb-2" id="p9_q1">1. Od koga ste dobili preporuku za nošenje sportske udlage?</label>
-        <select name="PreporukaUdlage" required class="w-full p-3 rounded-xl bg-white/10 border border-white/20" id="p9_q1_select">
-          <option value="" disabled selected id="p9_q1_opt0">Odaberite...</option>
-          <option id="p9_q1_opt1">Trenera</option>
-          <option id="p9_q1_opt2">Doktora dentalne medicine</option>
-          <option id="p9_q1_opt3">Suigrača</option>
+        <label class="block mb-2" id="p8_q1">1. Od koga ste dobili preporuku za nošenje sportske udlage?</label>
+        <select name="PreporukaUdlage" required class="w-full p-3 rounded-xl bg-white/10 border border-white/20" id="p8_q1_select">
+          <option value="" disabled selected id="p8_q1_opt0">Odaberite...</option>
+          <option id="p8_q1_opt1">Trenera</option>
+          <option id="p8_q1_opt2">Doktora dentalne medicine</option>
+          <option id="p8_q1_opt3">Suigrača</option>
         </select>
       </div>
 
       <div>
-        <label class="block mb-2" id="p9_q2">2. Smatrate li da ste dovoljno informirani o važnosti sportskih udlaga?</label>
+        <label class="block mb-2" id="p8_q2">2. Smatrate li da ste dovoljno informirani o važnosti sportskih udlaga?</label>
         <div class="flex gap-4">
           <label><input type="radio" name="DovoljnoInformiran" value="Da" required /> <span data-id="opt_da">Da</span></label>
           <label><input type="radio" name="DovoljnoInformiran" value="Ne" required /> <span data-id="opt_ne">Ne</span></label>
@@ -536,7 +536,7 @@
       </div>
 
       <div>
-        <label class="block mb-2" id="p9_q3">3. Smatrate li da bi sportaše trebalo educirati o zaštiti zubi i čeljusti?</label>
+        <label class="block mb-2" id="p8_q3">3. Smatrate li da bi sportaše trebalo educirati o zaštiti zubi i čeljusti?</label>
         <div class="flex gap-4">
           <label><input type="radio" name="EdukacijaSportaša" value="Da" required /> <span data-id="opt_da">Da</span></label>
           <label><input type="radio" name="EdukacijaSportaša" value="Ne" required /> <span data-id="opt_ne">Ne</span></label>
@@ -544,7 +544,7 @@
       </div>
 
       <div>
-        <label class="block mb-2" id="p9_q4">4. Smatrate li da bi doktori dentalne medicine trebali aktivnije promovirati korištenje sportskih udlaga?</label>
+        <label class="block mb-2" id="p8_q4">4. Smatrate li da bi doktori dentalne medicine trebali aktivnije promovirati korištenje sportskih udlaga?</label>
         <div class="flex gap-4">
           <label><input type="radio" name="PromocijaDDM" value="Da" required /> <span data-id="opt_da">Da</span></label>
           <label><input type="radio" name="PromocijaDDM" value="Ne" required /> <span data-id="opt_ne">Ne</span></label>
@@ -552,7 +552,7 @@
       </div>
       
       <div>
-        <label class="block mb-2" id="p9_q5">5. Smatrate li da bi sportske udlage trebale biti obavezne u svim kontaktnim sportovima?</label>
+        <label class="block mb-2" id="p8_q5">5. Smatrate li da bi sportske udlage trebale biti obavezne u svim kontaktnim sportovima?</label>
         <div class="flex gap-4">
           <label><input type="radio" name="ObavezneUdlage" value="Da" required /> <span data-id="opt_da">Da</span></label>
           <label><input type="radio" name="ObavezneUdlage" value="Ne" required /> <span data-id="opt_ne">Ne</span></label>
@@ -560,8 +560,8 @@
       </div>
 
       <div>
-        <label class="block mb-2" id="p9_q6">6. Imate li neki dodatni komentar ili prijedlog vezan uz sportske udlage?</label>
-        <textarea name="DodatniKomentar" class="w-full p-3 rounded-xl bg-white/10 border border-white/20 h-24" id="p9_q6_placeholder" placeholder="Upišite ovdje..."></textarea>
+        <label class="block mb-2" id="p8_q6">6. Imate li neki dodatni komentar ili prijedlog vezan uz sportske udlage?</label>
+        <textarea name="DodatniKomentar" class="w-full p-3 rounded-xl bg-white/10 border border-white/20 h-24" id="p8_q6_placeholder" placeholder="Upišite ovdje..."></textarea>
       </div>
 
       <div id="errorBox" class="mt-4"></div>
@@ -724,29 +724,19 @@
         'p7_q7': '7. Možete li ukratko opisati iritaciju?',
         'p7_q7_placeholder': 'Upišite ovdje...',
 
-        // Stranica 8
-        'p8_title': 'VIII. CIJENA I DOSTUPNOST',
-        'p8_q1': '1. Koliko ste platili svoju sportsku udlagu?',
-        'p8_q1_opt1': 'Manje od 10 €',
-        'p8_q1_opt2': '10-50 €',
-        'p8_q1_opt3': '50-100 €',
-        'p8_q1_opt4': 'Više od 100 €',
-        'p8_q2': '2. Smatrate li da je cijena udlage opravdana u odnosu na kvalitetu?',
-        'p8_q3': '3. Biste li bili spremni investirati u kvalitetniju udlagu?',
-        'p8_q4': '4. Jeste li zadovoljni dostupnošću sportskih udlaga na tržištu?',
-
+        
         // Stranica 9
-        'p9_title': 'IX. INFORMIRANOST I EDUKACIJA',
-        'p9_q1': '1. Od koga ste dobili preporuku za nošenje sportske udlage?',
-        'p9_q1_opt1': 'Trenera',
-        'p9_q1_opt2': 'Doktora dentalne medicine',
-        'p9_q1_opt3': 'Suigrača',
-        'p9_q2': '2. Smatrate li da ste dovoljno informirani o važnosti sportskih udlaga?',
-        'p9_q3': '3. Smatrate li da bi sportaše trebalo educirati o zaštiti zubi i čeljusti?',
-        'p9_q4': '4. Smatrate li da bi doktori dentalne medicine trebali aktivnije promovirati korištenje sportskih udlaga?',
-        'p9_q5': '5. Smatrate li da bi sportske udlage trebale biti obavezne u svim kontaktnim sportovima?',
-        'p9_q6': '6. Imate li neki dodatni komentar ili prijedlog vezan uz sportske udlage?',
-        'p9_q6_placeholder': 'Upišite ovdje...'
+        'p8_title': 'IX. INFORMIRANOST I EDUKACIJA',
+        'p8_q1': '1. Od koga ste dobili preporuku za nošenje sportske udlage?',
+        'p8_q1_opt1': 'Trenera',
+        'p8_q1_opt2': 'Doktora dentalne medicine',
+        'p8_q1_opt3': 'Suigrača',
+        'p8_q2': '2. Smatrate li da ste dovoljno informirani o važnosti sportskih udlaga?',
+        'p8_q3': '3. Smatrate li da bi sportaše trebalo educirati o zaštiti zubi i čeljusti?',
+        'p8_q4': '4. Smatrate li da bi doktori dentalne medicine trebali aktivnije promovirati korištenje sportskih udlaga?',
+        'p8_q5': '5. Smatrate li da bi sportske udlage trebale biti obavezne u svim kontaktnim sportovima?',
+        'p8_q6': '6. Imate li neki dodatni komentar ili prijedlog vezan uz sportske udlage?',
+        'p8_q6_placeholder': 'Upišite ovdje...'
       },
       'en': {
         // General
@@ -895,29 +885,18 @@
         'p7_q7': '7. Can you briefly describe the irritation?',
         'p7_q7_placeholder': 'Type here...',
 
-        // Stranica 8
-        'p8_title': 'VIII. PRICE AND AVAILABILITY',
-        'p8_q1': '1. How much did you pay for your sports mouthguard?',
-        'p8_q1_opt1': 'Less than 10 €',
-        'p8_q1_opt2': '10-50 €',
-        'p8_q1_opt3': '50-100 €',
-        'p8_q1_opt4': 'More than 100 €',
-        'p8_q2': '2. Do you believe the price of the mouthguard is justified in relation to its quality?',
-        'p8_q3': '3. Would you be willing to invest in a higher quality mouthguard?',
-        'p8_q4': '4. Are you satisfied with the availability of sports mouthguards on the market?',
-
-        // Stranica 9
-        'p9_title': 'IX. AWARENESS AND EDUCATION',
-        'p9_q1': '1. From whom did you receive a recommendation to wear a sports mouthguard?',
-        'p9_q1_opt1': 'Coach',
-        'p9_q1_opt2': 'Dental medicine doctor',
-        'p9_q1_opt3': 'Teammate',
-        'p9_q2': '2. Do you believe you are sufficiently informed about the importance of sports mouthguards?',
-        'p9_q3': '3. Do you believe athletes should be educated about the protection of teeth and jaw?',
-        'p9_q4': '4. Do you believe dental medicine doctors should more actively promote the use of sports mouthguards?',
-        'p9_q5': '5. Do you think sports mouthguards should be mandatory in all contact sports?',
-        'p9_q6': '6. Do you have any additional comments or suggestions related to sports mouthguards?',
-        'p9_q6_placeholder': 'Type here...'
+                // Stranica 9
+        'p8_title': 'IX. AWARENESS AND EDUCATION',
+        'p8_q1': '1. From whom did you receive a recommendation to wear a sports mouthguard?',
+        'p8_q1_opt1': 'Coach',
+        'p8_q1_opt2': 'Dental medicine doctor',
+        'p8_q1_opt3': 'Teammate',
+        'p8_q2': '2. Do you believe you are sufficiently informed about the importance of sports mouthguards?',
+        'p8_q3': '3. Do you believe athletes should be educated about the protection of teeth and jaw?',
+        'p8_q4': '4. Do you believe dental medicine doctors should more actively promote the use of sports mouthguards?',
+        'p8_q5': '5. Do you think sports mouthguards should be mandatory in all contact sports?',
+        'p8_q6': '6. Do you have any additional comments or suggestions related to sports mouthguards?',
+        'p8_q6_placeholder': 'Type here...'
       },
       'de': {
         // General
@@ -1066,29 +1045,19 @@
         'p7_q7': '7. Beschreiben Sie kurz:',
         'p7_q7_placeholder': 'Hier eingeben...',
 
-        // Page 8
-        'p8_title': 'VIII. PREIS UND VERFÜGBARKEIT',
-        'p8_q1': '1. Wie viel haben Sie für Ihren Mundschutz bezahlt?',
-        'p8_q1_opt1': '< 10 €',
-        'p8_q1_opt2': '10–50 €',
-        'p8_q1_opt3': '50–100 €',
-        'p8_q1_opt4': '> 100 €',
-        'p8_q2': '2. Halten Sie den Preis im Verhältnis zur Qualität für gerechtfertigt?',
-        'p8_q3': '3. Wären Sie bereit, in einen hochwertigeren Mundschutz zu investieren?',
-        'p8_q4': '4. Sind Sie mit der Verfügbarkeit von Mundschutzprodukten zufrieden?',
 
         // Page 9
-        'p9_title': 'IX. INFORMIERTHEIT UND AUFKLÄRUNG',
-        'p9_q1': '1. Von wem haben Sie die Empfehlung erhalten, einen Mundschutz zu tragen?',
-        'p9_q1_opt1': 'Trainer',
-        'p9_q1_opt2': 'Zahnarzt',
-        'p9_q1_opt3': 'Teamkollege',
-        'p9_q2': '2. Fühlen Sie sich ausreichend über die Bedeutung von Mundschutz informiert?',
-        'p9_q3': '3. Sollte mehr Aufklärung über den Schutz von Zähnen und Kiefer stattfinden?',
-        'p9_q4': '4. Sollten Zahnärzte die Verwendung von Mundschutz stärker fördern?',
-        'p9_q5': '5. Sollte Mundschutz in allen Kontaktsportarten verpflichtend sein?',
-        'p9_q6': '6. Haben Sie zusätzliche Kommentare oder Vorschläge?',
-        'p9_q6_placeholder': 'Hier eingeben...'
+        'p8_title': 'IX. INFORMIERTHEIT UND AUFKLÄRUNG',
+        'p8_q1': '1. Von wem haben Sie die Empfehlung erhalten, einen Mundschutz zu tragen?',
+        'p8_q1_opt1': 'Trainer',
+        'p8_q1_opt2': 'Zahnarzt',
+        'p8_q1_opt3': 'Teamkollege',
+        'p8_q2': '2. Fühlen Sie sich ausreichend über die Bedeutung von Mundschutz informiert?',
+        'p8_q3': '3. Sollte mehr Aufklärung über den Schutz von Zähnen und Kiefer stattfinden?',
+        'p8_q4': '4. Sollten Zahnärzte die Verwendung von Mundschutz stärker fördern?',
+        'p8_q5': '5. Sollte Mundschutz in allen Kontaktsportarten verpflichtend sein?',
+        'p8_q6': '6. Haben Sie zusätzliche Kommentare oder Vorschläge?',
+        'p8_q6_placeholder': 'Hier eingeben...'
       }
     };
 
@@ -1128,7 +1097,7 @@
         'p2_q5_select': ['p2_q5_opt0', 'p2_q5_opt1', 'p2_q5_opt2', 'p2_q5_opt3'],
         'p6_q5_select': ['p6_q5_opt0', 'p6_q5_opt1', 'p6_q5_opt2', 'p6_q5_opt3', 'p6_q5_opt4'],
         'p8_q1_select': ['p8_q1_opt0', 'p8_q1_opt1', 'p8_q1_opt2', 'p8_q1_opt3', 'p8_q1_opt4'],
-        'p9_q1_select': ['p9_q1_opt0', 'p9_q1_opt1', 'p9_q1_opt2', 'p9_q1_opt3']
+        'p8_q1_select': ['p8_q1_opt0', 'p8_q1_opt1', 'p8_q1_opt2', 'p8_q1_opt3']
       };
 
       for (const selectId in selectOptions) {
@@ -1167,7 +1136,7 @@
       document.getElementById('p1_q5_placeholder').placeholder = translations[lang]['placeholder_drugo'];
       document.getElementById('p4_q3_placeholder').placeholder = translations[lang]['placeholder_drugo'];
       document.getElementById('p7_q7_placeholder').placeholder = translations[lang]['placeholder_upisite'];
-      document.getElementById('p9_q6_placeholder').placeholder = translations[lang]['placeholder_upisite'];
+      document.getElementById('p8_q6_placeholder').placeholder = translations[lang]['placeholder_upisite'];
 
       // Ažuriraj aktivne zastave
       document.querySelectorAll('.flag-icon').forEach(flag => {
@@ -1216,7 +1185,7 @@
         if (nextStep === 2) handleConditionalPage2();
         if (nextStep === 4) handleConditionalPage4();
         // DODANO: Uvjetna vidljivost na stranici 8
-        if (nextStep === 8) handleConditionalPage8();
+        //if (nextStep === 8) handleConditionalPage8();
       }
 
       updateProgress(nextStep);
@@ -1475,7 +1444,7 @@
         // 2.2 IMPLEMENTACIJA PRESKAKANJA P5, P6, P7
         if (currentStep === 4) {
             if (koristenjeUdlageAnswer === 'Ne') {
-                nextStep = 9; // Preskoči na S8
+                nextStep = 8; // Preskoči na S8
             } else {
                 nextStep = 5; // Standardno na S5
             }
@@ -1503,7 +1472,7 @@
 
 
     // Slušatelj za zadnju formu (Pošalji)
-document.getElementById('page9').addEventListener("submit", async (e) => {
+document.getElementById('page8').addEventListener("submit", async (e) => {
     e.preventDefault();
     const currentForm = e.target.closest('form');
     const errorBox = document.getElementById("errorBox");
